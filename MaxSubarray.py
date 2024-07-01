@@ -1,3 +1,31 @@
+"""
+Maximum Subarray Difference Algorithm
+
+This module implements a divide-and-conquer algorithm to solve the maximum subarray difference problem.
+The problem is to find the maximum difference between any two elements in an array,
+where the larger element comes after the smaller element.
+
+Usage:
+    from max_subarray import maxSubarray
+
+    # Example data
+    data = [534, 35, 2, 5, 21, 5, 2]
+    
+    # Solve the maximum subarray difference problem
+    result = maxSubarray(data, 0, len(data) - 1)
+    print(f"The maximum subarray difference is: {result}")
+
+Functions:
+    maxSubarray(data, left, right): Main function to solve the problem
+    minElement(data, left, right): Helper function to find minimum element in a range
+    maxElement(data, left, right): Helper function to find maximum element in a range
+
+Note:
+    This algorithm has a time complexity of O(n log n) and a space complexity of O(log n)
+    due to its recursive nature.
+
+"""
+
 def maxSubarray(data, left, right):
     """ Function to solve the max subarray problem
         
@@ -44,3 +72,10 @@ def maxElement(data, left, right):
     for i in range(left, right + 1):
         maxEl = max(maxEl, data[i])
     return maxEl
+
+
+# Example usage
+if __name__ == "__main__":
+    data = [534, 35, 2, 5, 21, 5, 2]
+    result = maxSubarray(data, 0, len(data) - 1)
+    print(f"The maximum subarray difference is: {result}")
